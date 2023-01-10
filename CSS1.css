@@ -243,7 +243,7 @@ padding-right: 30px;
 
 
 /*РОВНЯЕМ ПОД ТЕЛЕФОН*/
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
     .boxes {
         display: block;
         text-align: center;
