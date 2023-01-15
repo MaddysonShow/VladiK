@@ -3,6 +3,8 @@ const body = document.querySelector('.body')
 const boxes = document.querySelector('.boxes')
 const oglav = document.querySelectorAll('.oglav')
 // const stolbets = document.querySelector('.stolbets::placeholder')
+const otpravka = document.querySelector('#отправка')
+const ima = document.querySelector('#имя')
 but.addEventListener('click', () => {
 
     if (but.getAttribute('id') === 'but_DkLt') {
@@ -25,6 +27,17 @@ but.addEventListener('click', () => {
         but.textContent = ' Dark';
     }
 });
+
+// onsubmit = (event) => {
+//     console.log(ima.getAttribute('ima') + 'getAtr');
+//     alert(ima.getAttribute('ima'));
+// };
+addEventListener('submit', logSubmit);
+function logSubmit(event) {
+    alert('ЕДЕМ В ГЕЙКЛУБ ' + ima.value.toUpperCase())
+    console.log('ima ' + ima.value);
+    event.preventDefault();
+}
 ///////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -37,7 +50,7 @@ var num1 = 21
 var num2 = 5
 var sum = num1 / num2
 name = 'vlad'
-console.log(typeof name)
+// console.log(typeof name)
 console.log('Pidor ' + sum)
 var da
 const year = 2023
@@ -83,17 +96,6 @@ for (i=0;i<=(mass.length-1);i++){
     console.log(mas)
 }*/
 
-const chelovek = {
-    nname: 'Mad',
-    lastnn: 'Dick',
-    rodil: 1996,
-    languages: ['ru', 'en', 'kz'],
-    marryed: false,
-    delay: function () {
-        console.log('Class.Function')
-    }
-}
-console.log(chelovek.languages)
 console.log(Math.pow(2, 53) - 1)
 
 intstring = '228'
@@ -155,17 +157,18 @@ if (mas.indexOf(dd) < 0) {
 
 const object = [
     {names: 'vlad', dlina: 998},
-    {names: 'dalv', dlina: 10},
+    {names: 'dalv', dlina: 120},
     {names: 'advl', dlina: 545},
+    {names: 'aziz', dlina: 210}
 ];
 
 for (var xs = 0; xs <= (object.length - 1); xs++) {
     // console.log(object[xs].dlina);
-    if (object[xs].dlina === 10) {
-         console.log('nashel ' + xs); //variant 1
+    if (object[xs].dlina === 120) {
+        console.log('nashel ' + xs); //variant 1
     }
 }
-;
+
 
 /*const ind = object.findIndex(function (poisk) {
     return poisk.names === "vlad";
@@ -176,14 +179,128 @@ const ind = object.find(ind => ind.names === "dsad")
 // console.log(ind); //стрелочная лямбда функция поиск а
 // console.log(mas.includes('LOL'));
 
-const Upper = mas.map(up =>{
+const Upper = mas.map(up => {
     return up.toLowerCase()
 })
 // console.log(Upper);
 //pow2 = c => c ** 2;
 //const Kvadrat = mass.map(Math.sqrt);
 // console.log(Kvadrat);
-const ebat = mass.map(num => num *2);
+const ebat = mass.map(num => num * 2);
 console.log(ebat);
-const filter = ebat.filter(up =>  up > 80);
+const filter = ebat.filter(up => up > 80);
 console.log(filter);
+
+const allDlina = object.filter(fil => fil.dlina > 0).reduce
+(function (beta, alfa) {
+    return beta += alfa.dlina;
+}, 0)
+console.log('reduce ' + allDlina);
+let maat = 0;
+const go = object.map(mat => maat += mat.dlina)
+console.log(maat);
+
+/*let bind = [{nam: 90}, {nam: 3}, {nam: 7}, {nam: 10}];   Два метода поиска и фильтра результата
+const vera = bind.filter(cycle => cycle.nam > 7).reduce((first, second) =>
+    first += second.nam, 0)
+console.log(vera);
+
+
+for (p = 0, per = 0; p <= (bind.length - 1); p++) {
+    if (bind[p].nam > 7) {
+        per += bind[p].nam;
+    }
+}
+console.log('per ' + parseFloat(per));*/
+
+/*var POISK = 'KEKA'; метод поиска и фильтра результата
+for (o = 0; o <= (mas.length - 1); o++) {
+    if (mas[o] === POISK) {
+        console.log(o + ' ' + mas[o]);
+    } else {
+        console.log('nenaideno');
+    }
+}*/
+
+const chelovek = {
+    nname: 'Mad',
+    lastnn: 'Dick',
+    rodil: undefined,
+    languages: ['ru', 'en', 'kz'],
+    marryed: false,
+    'complex': 'complex key',
+    ['key_' + (1 + 4)]: 'KKKK555',
+    delay: function () {
+        console.log('Class.Function')
+    },
+    delay2() {
+        console.log('delay2');
+    },
+    inf() {
+        console.log('this ', this);
+    }
+}
+
+/*console.log(chelovek['complex']);
+chelovek.delay2()
+chelovek['key_5'] = 789;
+console.log(chelovek['key_5']);
+delete chelovek['key_5'];
+console.log(chelovek);
+const {nname, rodil: ages = 1, languages} = chelovek;
+ console.log(nname, ages, languages)*/
+
+for (let i in chelovek) {
+    if (chelovek.hasOwnProperty(i)) {  //ЗАПОМНИТЬ
+        //   console.log(i, chelovek[i]);
+    }
+}
+
+Object.keys(chelovek).forEach((key) => {
+    // console.log(chelovek[key])
+})
+
+// console.log(Object.keys(chelovek));
+chelovek.inf();
+
+const logger =
+    {
+        keyss(che) {
+            console.log('type ', Object.keys(this))
+            //  a = this;
+            // console.log('this ', a)
+            // console.log('TAIP ', Object.keys(gget))
+            /*Object.keys(this).forEach((key) => {
+                console.log(this[key])
+             })*/
+
+        },
+        pod: 'dolb',
+        keyAndValue() {
+            for (let C in this) {
+                if (this.hasOwnProperty(C)){console.log(C + ' ' + this[C]);}
+
+            }
+            Object.keys(this).forEach((key) => {
+                console.log(this[key] + '->' + key)
+            })
+        },
+        keyAndValWithParams(top = false, between = false, bot = false) {
+            if (top) { console.log('------START------'); }
+            Object.keys(this).forEach((key, index, array) => {
+                console.log(this[key] + '->' + key)
+                if (between && index !== (array.length - 1)) { console.log('----------------');}
+            })
+            if(bot) { console.log('------ END ------') }
+        }
+    }
+//
+// const bound = logger.keyss.bind(chelovek);
+// bound();
+
+logger.keyAndValWithParams.apply(chelovek, [true, , true]) //все тоже что и call только всего
+// два параметра, и вторым можно давать массив значений
+// logger.keyAndValWithParams.call(chelovek, false, true, true)
+
+
+
