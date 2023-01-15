@@ -51,20 +51,20 @@
 
 <div class="Contact">
     <h2>Связь со мной</h2>
-    <form action="/">
+    <form> <!--action =""-->
         <div class="row">
             <div class="stolbets">
-                <label for="имя">ВВедите ваше имя</label>
+                <label for="имя">Введите ваше имя</label>
                 <input type="text" id="имя" placeholder="Иван Иванов">
             </div>
             <div class="stolbets">
-                <label for="телефон">ВВедите ваш телефон</label>
+                <label for="телефон">Введите ваш телефон</label>
                 <input type="tel" id="телефон" placeholder="+79017019427">
             </div>
         </div>
         <div class="stolbets">
             <label for="текст">Введите свой текст</label>
-            <textarea id="текст" rows="2" cols="15" placeholder="Что то пишу"></textarea>
+            <textarea id="текст" rows="2" cols="15" placeholder="Что то пишу" maxlength="10"></textarea>
         </div>
         <p><input type="submit" id="отправка" value="Отправить!!!"></p>
     </form>
@@ -75,7 +75,7 @@
     </div>
 </div>
 
-<hr width="90%" color="green"/>
+<hr/>
 <table class="table">
     <tr>
         <td>Name</td>
