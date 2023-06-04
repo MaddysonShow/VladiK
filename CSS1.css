@@ -151,6 +151,7 @@ a {
 .Contact {
     padding: 10px;
     margin-left: 0.5%;
+    margin-right: 0.5%;
     background-color: rgba(0, 255, 234, 0.45);
     border-radius: 20px;
 }
@@ -259,6 +260,7 @@ a {
     .boxes {
         display: block;
         text-align: center;
+        margin-right: 0.5%;
     }
 
     .boxesD {
@@ -268,6 +270,7 @@ a {
 
     .vse {
         display: block;
+        margin-right: 0.5%;
     }
 
     .vse .social, .hobby, .rabota {
